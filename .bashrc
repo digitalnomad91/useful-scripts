@@ -22,6 +22,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\e[1;31m\]\u\[\e[1;33m\]@\[\e[1;36m\]\h
 
 # alias for finding which process a particular port is running from
 alias ports='sudo lsof -i -P -n | grep LISTEN'
+alias findInFile='grep -liR'
 
 # catch stdin, pipe it to stdout and save to a file
 function catch () { 
