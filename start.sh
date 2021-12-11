@@ -1,6 +1,7 @@
 #!/bin/bash
 ## Stuff that needs to be run on startup, initiated by rc.local
 
+
 ## OutlineWiki Start
 tmux new-session -d -s outlinewiki 
 tmux send-keys -t outlinewiki:0 "cd /root/outline && yarn start" ENTER
@@ -11,7 +12,7 @@ mount /dev/sdc1 /disk2
 
 # Start Synapse (Matrix Server)
 tmux new-session -d -s matrix_synapse_server
-tmux send-keys -t matrix_synapse_server:0 "cd /etc/matrix-synapse/ && /opt/venvs/matrix-synapse/bin/python -m synapse.app.homeserver --config-path=/etc/matrix-synapse/homeserver.yaml --config-path=/etc/matrix-synapse/conf.d/" ENTER
+tmux send-keys -t matrix_synapse_server:0 "source /opt/venvs/matrix-synapse/bin/activate && cd /etc/matrix-synapse/ && /opt/venvs/matrix-synapse/bin/python3 -m synapse.app.homeserver --config-path=/etc/matrix-synapse/homeserver.yaml --config-path=/etc/matrix-synapse/conf.d/" ENTER
 
 # Start Sydent (Matrix Identity)
 tmux new-session -d -s matrix_sydent 
@@ -26,20 +27,24 @@ tmux new-session -d -s dangler_bot
 tmux send-keys -t dangler_bot:0 "cd /root/matrix-js-sdk-bot-template && node index.js" ENTER
 
 # Start Dangler Matrix Bot TCP Listen Server (Message Echo)
-tmux new-session -d -s dangler_bot_tcp
-tmux send-keys -t dangler_bot_tcp:0 "cd /root/matrix-js-sdk-bot-template && node tcpserver.js" ENTER
+#tmux new-session -d -s dangler_bot_tcp
+#tmux send-keys -t dangler_bot_tcp:0 "cd /root/matrix-js-sdk-bot-template && node tcpserver.js" ENTER
 
 # Start Hydrogen Matrix Web Client
 tmux new-session -d -s hydrogen_matrix_client
 tmux send-keys -t hydrogen_matrix_client:0 "cd /root/hydrogen-web && yarn start" ENTER
+
+# Start matrix.subtlefu.ge (preview room share link - matrix.to)
+tmux new-session -d -s matrix_share
+tmux send-keys -t matrix_share:0 "cd /var/www/matrix.to && yarn start" ENTER
 
 # Start Synapse Matrix Admin GUI
 tmux new-session -d -s synapse_admin_client
 tmux send-keys -t synapse_admin_client:0 "cd /root/synapse-admin && yarn start" ENTER
 
 ###### START ELEMENT-WEB CLIENT #####
-tmux new-session -d -s element_web_client
-tmux send-keys -t element_web_client:0 "cd /var/www/element-web && yarn start" ENTER
+#tmux new-session -d -s element_web_client
+#tmux send-keys -t element_web_client:0 "cd /var/www/element-web && yarn start" ENTER
 
 ###### START INSPIRCD IRC DAEMON #####
 tmux new-session -d -s inspircd
@@ -47,7 +52,8 @@ tmux send-keys -t inspircd:0 "inspircd --runasroot" ENTER
 
 ###### START ANOPE IRC SERVICES #####
 tmux new-session -d -s anope
-tmux send-keys -t anope:0 "sudo -u anope && cd /home/services && bin/services" ENTER
+tmux send-keys -t anope:0 "su anope" ENTER
+tmux send-keys -t anope:0 "cd /home/services && bin/services" ENTER
 
 ##### Start stackedit docs #####
 tmux new-session -d -s stackedit
@@ -64,6 +70,10 @@ tmux send-keys -t flood:0 "cd /var/www/flood && flood --port 3005" ENTER
 ###### START OMBI #####
 tmux new-session -d -s ombi_server
 tmux send-keys -t ombi_server:0 "cd /opt/Ombi && sudo -u ombi /opt/Ombi/Ombi --storage /etc/Ombi/ --host http://*:5009" ENTER
+
+###### START PIXELFED HORIZON #####
+tmux new-session -d -s pixelfed_horizon
+tmux send-keys -t pixelfed_horizon:0 "cd /var/www/pixelfed && php artisan horizon" ENTER
 
 #################### START ALL ZNC SERVERS ####################
 tmux new-session -d -s corruptnet_znc
