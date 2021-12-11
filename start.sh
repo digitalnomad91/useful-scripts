@@ -1,5 +1,5 @@
 #!/bin/bash
-## Stuff that needs to be run on startup, initiated by rc.local
+## Stuff that needs to be run on startup
 
 
 ## OutlineWiki Start
