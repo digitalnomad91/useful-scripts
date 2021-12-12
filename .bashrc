@@ -14,6 +14,24 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+#github aliases
+alias gs='git status'
+alias gp='git pull'
+alias gph='git push'
+alias gd='git diff | mate'
+alias gau='git add --update'
+alias gc='git commit -m'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcot='git checkout -t'
+alias gcotb='git checkout --track -b'
+alias glog='git log'
+alias glogp='git log --pretty=format:"%h %s" --graph'
+alias gfo='git fetch origin'
+
 HISTCONTROL=ignoreboth
 HISTFILESIZE=999999999
 HISTSIZE=999999999
