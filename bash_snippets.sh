@@ -15,3 +15,6 @@ sudo update-alternatives --set phar /usr/bin/phar8.0
 sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.0
 sudo update-alternatives --set phpize /usr/bin/phpize8.0
 sudo update-alternatives --set php-config /usr/bin/php-config8.0
+
+## register a wildcard domain name SSL certficiate with LetsEncrypt (valid for subtlefu.ge & *.subtlefu.ge):
+certbot certonly --manual --preferred-challenges=dns --email dfoolz@protonmail.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.subtlefu.ge -d subtlefu.ge
