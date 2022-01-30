@@ -23,8 +23,8 @@ certbot certonly --manual --preferred-challenges=dns --email dfoolz@protonmail.c
 
 ## download / archive entire website using wget:
 
-wget  --recursive --no-clobber --page-requisites --html-extension  --convert-links --restrict-file-names=windows  --domains website.org --no-parent www.website.org/tutorials/html/
-         
+wget --recursive  --level 5  --no-clobber  --page-requisites --adjust-extension  --span-hosts  --convert-links --restrict-file-names=windows  --domains codebuilder.us --no-parent  https://codebuilder.us
+
   #The options are:
   #  --recursive: download the entire Web site.
   #  --domains website.org: don't follow links outside website.org.
