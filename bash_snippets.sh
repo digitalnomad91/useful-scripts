@@ -23,16 +23,7 @@ certbot certonly --manual --preferred-challenges=dns --email dfoolz@protonmail.c
 
 ## download / archive entire website using wget:
 
-wget \
-     --recursive \
-     --no-clobber \
-     --page-requisites \
-     --html-extension \
-     --convert-links \
-     --restrict-file-names=windows \
-     --domains website.org \
-     --no-parent \
-         www.website.org/tutorials/html/
+wget  --recursive --no-clobber --page-requisites --html-extension  --convert-links --restrict-file-names=windows  --domains website.org --no-parent www.website.org/tutorials/html/
          
   #The options are:
   #  --recursive: download the entire Web site.
