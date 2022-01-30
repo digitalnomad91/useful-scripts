@@ -19,3 +19,27 @@ sudo update-alternatives --set php-config /usr/bin/php-config8.0
 
 ## register a wildcard domain name SSL certficiate with LetsEncrypt (valid for subtlefu.ge & *.subtlefu.ge):
 certbot certonly --manual --preferred-challenges=dns --email dfoolz@protonmail.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.subtlefu.ge -d subtlefu.ge
+
+
+## download / archive entire website using wget:
+
+wget \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains website.org \
+     --no-parent \
+         www.website.org/tutorials/html/
+         
+  #The options are:
+  #  --recursive: download the entire Web site.
+  #  --domains website.org: don't follow links outside website.org.
+  #  --no-parent: don't follow links outside the directory tutorials/html/.
+  #  --page-requisites: get all the elements that compose the page (images, CSS and so on).
+  #  --html-extension: save files with the .html extension.
+  #  --convert-links: convert links so that they work locally, off-line.
+  #  --restrict-file-names=windows: modify filenames so that they will work in Windows as well.
+  #  --no-clobber: don't overwrite any existing files (used in case the download is interrupted and resumed).
