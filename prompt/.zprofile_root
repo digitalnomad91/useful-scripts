@@ -1,0 +1,10 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+cat /etc/motd
+neofetch
+for f in /etc/update-motd.d/*; do
+  bash "$f"
+done
+
+# Created by `pipx` on 2023-05-16 07:35:29
+export PATH="$PATH:/root/.local/bin"
