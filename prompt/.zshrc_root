@@ -176,3 +176,4 @@ fi
 
 # Created by `pipx` on 2023-05-16 07:35:29
 export PATH="$PATH:/root/.local/bin"
+export PATH="$PATH:/root/.local/bin"
