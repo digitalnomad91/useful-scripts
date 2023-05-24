@@ -88,7 +88,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(zsh-exa git node bundler docker docker-compose rake ruby python zsh-syntax-highlighting zsh-256color nvm oh-my-matrix zsh-nvm reminder common-aliases extract sudo taskwarrior yarn-autocompletions zsh-auto-nvm-use)
+plugins=(exa-zsh git node bundler docker docker-compose rake ruby python zsh-syntax-highlighting zsh-256color nvm oh-my-matrix zsh-nvm reminder common-aliases extract sudo taskwarrior yarn-autocompletions zsh-auto-nvm-use zsh-autosuggestions fast-syntax-highlighting zsh-autocomplete)
 #zsh-bash
 source $ZSH/oh-my-zsh.sh
 
@@ -176,3 +176,4 @@ PERL_MB_OPT="--install_base \"/home/digitalnomad91/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/digitalnomad91/perl5"; export PERL_MM_OPT;
 eval "
 eval "
+export PATH="$PATH:/root/.local/bin"
