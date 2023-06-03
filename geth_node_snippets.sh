@@ -16,3 +16,5 @@ tmux send-keys -t geth_node:0 'geth --rinkeby --datadir /storage/disk1/rinkeby -
 ## combined tmux-new-session && initialization command 
 #tmux new-session -d -s geth_node geth --rinkeby --datadir /storage/disk1/rinkeby --syncmode fast --http --ws --ws.addr "127.0.0.1" --ws.port 8546 --ws.api "eth,net,web3,rpc" --ws.origins="*"
 
+### grep to find private keys in files
+grep -r '\b[5KL][1-9A-HJ-NP-Za-km-z]\{50,51\}\b' *
