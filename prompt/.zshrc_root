@@ -95,7 +95,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(exa-zsh git node bundler docker docker-compose rake ruby python zsh-syntax-highlighting zsh-256color nvm oh-my-matrix zsh-nvm reminder common-aliases extract sudo taskwarrior yarn-autocompletions zsh-auto-nvm-use fast-syntax-highlighting)
+plugins=(zsh-autocomplete exa-zsh git node bundler docker docker-compose rake ruby python zsh-syntax-highlighting zsh-256color nvm oh-my-matrix zsh-nvm reminder common-aliases extract sudo taskwarrior yarn-autocompletions zsh-auto-nvm-use fast-syntax-highlighting)
 #zsh-bash
 source $ZSH/oh-my-zsh.sh
 
