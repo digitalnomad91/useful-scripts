@@ -34,3 +34,8 @@ wget --recursive  --level 5  --no-clobber  --page-requisites --adjust-extension 
   #  --convert-links: convert links so that they work locally, off-line.
   #  --restrict-file-names=windows: modify filenames so that they will work in Windows as well.
   #  --no-clobber: don't overwrite any existing files (used in case the download is interrupted and resumed).
+
+#### clone every repo in an organization (must be logged into github with gh)
+gh repo list dexcelerate --limit 1000 | while read -r repo _; do
+  gh repo clone "$repo" "$repo"
+done
