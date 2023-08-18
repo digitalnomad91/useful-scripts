@@ -39,3 +39,8 @@ wget --recursive  --level 5  --no-clobber  --page-requisites --adjust-extension 
 gh repo list dexcelerate --limit 1000 | while read -r repo _; do
   gh repo clone "$repo" "$repo"
 done
+
+
+
+# find all of a file type in a folder recursively:
+find / -maxdepth 10 -mindepth 0 -iname "*.json" --type json \;
